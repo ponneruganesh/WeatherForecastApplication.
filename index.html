@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Weather Forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="/"><span class="brand-icon">☀</span> skycast<span class="brand-dot">.</span></a><span class="live"><i></i> LIVE WEATHER</span></header>
+    <section class="hero"><div class="eyebrow">YOUR WEATHER, AT A GLANCE</div><h1>Every day has a<br><span>forecast.</span></h1><p>Clear skies or rainy days — plan ahead with real-time weather and a 5-day outlook.</p>
+      <form id="searchForm" class="search"><span class="search-icon">⌕</span><input id="cityInput" aria-label="City name" placeholder="Search any city..." value="Nellore" autocomplete="off"><button type="submit">Get forecast <span>→</span></button></form>
+      <div class="quick-cities">Try: <button data-city="Nellore">Nellore</button><button data-city="Hyderabad">Hyderabad</button><button data-city="Bengaluru">Bengaluru</button><button data-city="London">London</button></div>
+    </section>
+    <div id="message" class="message" role="status">Loading weather...</div>
+    <section id="weatherContent" class="weather-content hidden">
+      <div class="current-card"><div class="current-left"><div class="location-line"><span class="pin">⌖</span><div><h2 id="location">Nellore, India</h2><div id="localTime" class="muted">Local time</div></div></div><div id="condition" class="condition">Partly cloudy</div><div class="temperature"><span id="temperature">--</span><span class="degree">°</span></div><div class="feels">Feels like <b id="feelsLike">--°</b></div></div><div class="weather-art"><div id="weatherEmoji" class="big-weather">🌤️</div><div class="sun-orbit"></div></div><div class="current-footer"><span><small>☁</small><b id="humidity">--%</b><em>Humidity</em></span><span><small>♧</small><b id="wind">-- km/h</b><em>Wind speed</em></span><span><small>☂</small><b id="rain">-- mm</b><em>Precipitation</em></span></div></div>
+      <div class="section-heading"><div><div class="eyebrow">LOOKING AHEAD</div><h2>5-day forecast</h2></div><span class="small-note">Daily high &amp; low</span></div>
+      <div id="forecast" class="forecast-grid"></div>
+      <div class="sun-card"><div><span class="sun-symbol">↗</span><div><small>SUNRISE</small><b id="sunrise">--:--</b></div></div><div class="sun-track"><span></span></div><div><span class="sun-symbol sunset">↘</span><div><small>SUNSET</small><b id="sunset">--:--</b></div></div></div>
+    </section>
+    <footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · Built with Java &amp; Spring Boot</footer>
+  </main>
+  <script src="/app.js"></script>
+</body></html>
